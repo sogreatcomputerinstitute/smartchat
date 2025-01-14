@@ -1,7 +1,15 @@
 # Use the official PHP image as a base image
 FROM php:7.4-apache
 
-# Copy your PHP application files to the /var/www directory in the container
+# Install Docker
+RUN apt-get update && \
+    apt-get install -y apt-transport-https ca-certificates curl software-properties-common && \
+    curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
+    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" && \
+    apt-get update && \
+    apt-get install -y docker-ce
+
+# Copy your PHP application files to the /var/www/insta directory in the container
 COPY ./insta /var/www/insta
 
 # Set the working directory inside the container
