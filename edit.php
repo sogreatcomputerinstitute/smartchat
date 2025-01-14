@@ -7,11 +7,9 @@
 <?php
   $universal = new universal;
   $avatar = new Avatar;
-  $post = new post;
+  $tags = new tags;
   $noti = new notifications;
   $message = new message;
-  $suggestions = new suggestion;
-  $hashtag = new hashtag;
 ?>
 
 <?php
@@ -22,7 +20,12 @@
 ?>
 
 <?php
-  $title = "{$noti->titleNoti()} SmartChat";
+  // FOR DELETING EMPTY TAGS
+  $tags->filterTags();
+?>
+
+<?php
+  $title = "{$noti->titleNoti()} Edit profile (@".$universal->getUsernameFromSession().") • SmartChat";
   $keywords = "SmartChat, Share and capture world's moments, share, capture, home";
   $desc = "SmartChat lets you capture, follow, like and share world's moments in a better way and tell your story with photos, messages, posts and everything in between";
 ?>
@@ -35,25 +38,17 @@
 <div class="user_info" data-userid="<?php echo $session; ?>" data-sessionid="<?php echo $session; ?>" data-username="<?php echo $universal->getUsernameFromSession(); ?>"></div>
 
 <div class="overlay"></div>
+<div class="overlay-2"></div>
 <div class="notify"><span></span></div>
 <div class="badshah">
-  <?php include_once 'ajaxify/home/home.php'; ?>
+  <?php include 'ajaxify/edit_profile/edit_profile.php'; ?>
 </div>
 
-<?php include 'needs/post.php'; ?>
 <?php include 'needs/emojis.php'; ?>
-<?php include_once 'needs/display.php'; ?>
-<?php include_once 'needs/image_show.php'; ?>
-<?php include_once 'needs/prompt.php'; ?>
-<?php include_once 'needs/stickers.php'; ?>
 <?php include_once 'needs/search.php'; ?>
-<?php include_once 'needs/noti_speak.php'; ?>
-<?php include 'needs/create_group.php'; ?>
 
 <?php
-  // $help = array(
-  //   "If getting <b>irritated</b>, then you're a <b>refresh</b> away"
-  // );
+  // $help = array("You can press <b>Enter</b> to save");
   // include_once 'needs/tip.php';
 ?>
 
@@ -61,11 +56,16 @@
 <?php include_once 'includes/footer.php'; ?>
 <script type="text/javascript">
   $(function(){
-    $('.m_n_a').removeClass('active');
-    LinkIndicator('index');
 
-    $(window).commonUserFeeds({when: "home"});
-    // getFeedAtEnd();
+    $('.edit_un_text').focus();
+
+    $('.m_n_a').removeClass('active');
+    LinkIndicator('edit');
+
+    $('.edit_update > span').description({
+      extraTop: -5,
+      extraLeft: 5
+    });
 
   });
 </script>
