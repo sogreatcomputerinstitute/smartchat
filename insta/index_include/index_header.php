@@ -6,6 +6,9 @@
     <meta name="keywords" content=<?php echo $keywords; ?>>
     <meta name="description" content=<?php echo $desc; ?>>
     <meta name="author" content="SmartChat, Subho">
+    <meta name="google-site-verification" content="BM-04UpGVtJ7Sdrgo0o1aDZxAZEK_fC4UngIIiMBdWU" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1576756667957072"
+     crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/favicon/favicon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
