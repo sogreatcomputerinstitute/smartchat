@@ -1,5 +1,5 @@
 # hashtag.io
-Hashtag.io is a PHP based social networking website, which supports exclusive multimedia content, sharing and private or group messaging service.
+SmartChat is a PHP based social networking website, which supports exclusive multimedia content, sharing and private or group messaging service.
 
 # Quick Links
  1. [Screenshots](#screenshots)
@@ -72,17 +72,12 @@ Hashtag.io is a PHP based social networking website, which supports exclusive mu
 
 Latest Version of PHP and Apache Server (Xampp/ Wampp).
 
-# Setup Guide
-
-1. Open PHPMyAdmin, create a Database & import hashtag.sql.
-2. Open `config/class/needy_class.php` & fill up your PDO, Path & Email details.
-3. Open `config/declare.php`, `config/class/needy_class.php` & `public/js/modules.js` & replace DIR variable containing my root path with your root path. (Note: Do not add forward slash in the end!).
-4. Open `.htaccess`, go to line 17 & replace it with your root path.
-5. If Time ago feature is not working correctly (forward or behind), then go to `config/class/time.class.php` & play around with line no 8.
-Enjoy!!
-
 
 # Contribute
+ Donate to 
+ Momo Psb 
+ Acct No.: 9037569616
+ 
 
 Show your support by 🌟 the project!!
 Feel free to contribute!
