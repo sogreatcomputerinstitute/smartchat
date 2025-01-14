@@ -2,7 +2,7 @@
 FROM php:7.4-apache
 
 # Copy your PHP application files to the /var/www/html directory in the container
-COPY ./insta
+COPY ./insta /var/www/html/insta
 
 # Set the working directory inside the container
 WORKDIR /var/www/html/insta
@@ -14,7 +14,8 @@ EXPOSE 80
 RUN docker-php-ext-install mysqli
 
 # Set permissions for the Apache web server to access your files
-RUN chown -R www-data:www-data /insta
+RUN chown -R www-data:www-data /var/www/html
+RUN chmod -R 755 /var/www/html
 
 # Start the Apache server
 CMD ["apache2-foreground"]
